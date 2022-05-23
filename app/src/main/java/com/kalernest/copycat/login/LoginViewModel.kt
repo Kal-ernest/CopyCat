@@ -19,7 +19,7 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     val users = repository.users
 
     @Bindable
-    val inputUsername = MutableLiveData<String>()
+    val inputUsername: MutableLiveData<String> = MutableLiveData<String>()
 
     @Bindable
     val inputPassword = MutableLiveData<String>()

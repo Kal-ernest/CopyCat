@@ -10,11 +10,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.kalernest.copycat.R
 import com.kalernest.copycat.database.RegisterDatabase
 import com.kalernest.copycat.database.RegisterRepository
 import com.kalernest.copycat.databinding.FragmentLoginBinding
+
 
 class LoginFragment : Fragment() {
 
@@ -87,15 +89,18 @@ class LoginFragment : Fragment() {
 
     private fun displayUsersList() {
         Log.i("MYTAG","insidisplayUsersList")
-        val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
-        NavHostFragment.findNavController(this).navigate(action)
+        //val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+        NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_userDetailsFragment)
+
+        //view : View ->
+        //view.findNavController().navigate(R.id.action_loginFragment_to_userDetailsFragment)
 
     }
 
     private fun navigateUserDetails() {
         Log.i("MYTAG","insidisplayUsersList")
-        val action = SpecifyAmount
-        val action = LoginFragmentDirections.actionLoginFragmentToUserDetailsFragment()
-        NavHostFragment.findNavController(this).navigate(action)
+        //val action = SpecifyAmount
+        //val action = LoginFragmentDirections.actionLoginFragmentToUserDetailsFragment()
+        NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_userDetailsFragment)
     }
 }

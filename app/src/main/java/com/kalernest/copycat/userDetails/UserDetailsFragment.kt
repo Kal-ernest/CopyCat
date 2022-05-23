@@ -26,7 +26,7 @@ class UserDetailsFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.user_details_fragment, container, false
+            R.layout.fragment_user_details, container, false
         )
 
         val application = requireNotNull(this.activity).application
@@ -60,7 +60,7 @@ class UserDetailsFragment : Fragment() {
 
 
     private fun initRecyclerView() {
-        binding.usersRecyclerView.layoutManager = LinearLayoutManager(this.context)
+        binding.usersRecyclerView.LayoutManager = LinearLayoutManager(this.context)
         displayUsersList()
     }
 
